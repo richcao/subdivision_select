@@ -46,9 +46,9 @@ var SubdivisionSelect = (function() {
     self._subdivisionSelect.prop("disabled", isEmpty);
 
     if (isEmpty) {
-      self._subdivisionSelect.hide();
+      self._subdivisionSelect.closest(".form-group").hide();
     } else {
-      self._subdivisionSelect.show();
+      self._subdivisionSelect.closest(".form-group").show();
     }
 
      
