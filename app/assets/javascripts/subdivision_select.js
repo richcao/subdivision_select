@@ -20,7 +20,7 @@ var SubdivisionSelect = (function() {
 
   SubdivisionSelect.prototype.init = function() {
     var self = this;
-    self._enabledInputsBeforeSubmit();
+    //self._enabledInputsBeforeSubmit();
 
     $(this._countrySelect).change(function() {
       console.log("change");
