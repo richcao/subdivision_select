@@ -1,5 +1,4 @@
 var SubdivisionSelect = (function() {
-  alert("hihi");
   SubdivisionSelect.subdivisionSelector = "select[data-subdivision-selector]";
   SubdivisionSelect.countrySelector = "select[id$=country]";
 
@@ -23,7 +22,6 @@ var SubdivisionSelect = (function() {
     self._enabledInputsBeforeSubmit();
 
     $(this._countrySelect).change(function() {
-      console.log("change");
       $.ajax( {
         url: "/subdivisions",
         data: { country_code: $(this).val() }
