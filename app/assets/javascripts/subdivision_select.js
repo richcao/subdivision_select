@@ -20,7 +20,7 @@ var SubdivisionSelect = (function() {
 
   SubdivisionSelect.prototype.init = function() {
     var self = this;
-    //self._enabledInputsBeforeSubmit();
+    self._enabledInputsBeforeSubmit();
 
     $(this._countrySelect).change(function() {
       console.log("change");
@@ -53,14 +53,11 @@ var SubdivisionSelect = (function() {
 
      
     // If there are none, make it say "none"
-    /*
     if (isEmpty) {
       self._subdivisionSelect.append($("<option></option>").text("none"));
     }
-    */
   };
 
-  /*
   // Disabling selects means they won't POST with the form.
   // Solution: right before submiting a form, enabled them.
   SubdivisionSelect.prototype._enabledInputsBeforeSubmit = function() {
@@ -68,7 +65,6 @@ var SubdivisionSelect = (function() {
       $(this).find('select').removeAttr('disabled');
     });
   };
-  */
 
   // Not only empty the select, but:
   // if the first element is blank, add a blank element before all others
