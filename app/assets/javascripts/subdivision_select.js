@@ -1,4 +1,5 @@
 var SubdivisionSelect = (function() {
+  alert("hihi");
   SubdivisionSelect.subdivisionSelector = "select[data-subdivision-selector]";
   SubdivisionSelect.countrySelector = "select[id$=country]";
 
@@ -22,6 +23,7 @@ var SubdivisionSelect = (function() {
     self._enabledInputsBeforeSubmit();
 
     $(this._countrySelect).change(function() {
+      console.log("change");
       $.ajax( {
         url: "/subdivisions",
         data: { country_code: $(this).val() }
@@ -43,12 +45,22 @@ var SubdivisionSelect = (function() {
     // Disable the select if there are no newSubdivisions (and un-do that once there are some)
     self._subdivisionSelect.prop("disabled", isEmpty);
 
+    if (isEmpty) {
+      self._subdivisionSelect.hide();
+    } else {
+      self._subdivisionSelect.show();
+    }
+
+     
     // If there are none, make it say "none"
+    /*
     if (isEmpty) {
       self._subdivisionSelect.append($("<option></option>").text("none"));
     }
+    */
   };
 
+  /*
   // Disabling selects means they won't POST with the form.
   // Solution: right before submiting a form, enabled them.
   SubdivisionSelect.prototype._enabledInputsBeforeSubmit = function() {
@@ -56,6 +68,7 @@ var SubdivisionSelect = (function() {
       $(this).find('select').removeAttr('disabled');
     });
   };
+  */
 
   // Not only empty the select, but:
   // if the first element is blank, add a blank element before all others

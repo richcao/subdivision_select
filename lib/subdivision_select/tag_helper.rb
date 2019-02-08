@@ -3,7 +3,7 @@ module SubdivisionSelect
   module TagHelper
     def subdivision_option_tags
       option_tags_options = {
-        selected: @options.fetch(:selected) { value(@object) },
+        #selected: @options.fetch(:selected) { value(@object) },
         disabled: @options[:disabled]
       }
 
